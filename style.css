@@ -14,7 +14,8 @@ body {
 }
 
 input,
-select {
+select,
+#submit-button {
 	width: 100%;
 	box-sizing: border-box;
 	margin-bottom: 5px;

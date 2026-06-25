@@ -13,7 +13,7 @@
         <button id="new-book-btn" command="show-modal" commandfor="my-dialog">New Book</button>
 
         <dialog id="my-dialog">
-            <form action="" id="new-book-form" style="display: none;">
+            <form action="" id="form" style="display: none;">
                 <div>
                     <label for="title">Book Title:</label>
                     <input type="text" name="title" id="title" required />
@@ -38,11 +38,14 @@
                 </div>
 
                 <div>
-                    <input type="submit" name="submit" value="Add Book" />
+                    <!-- <input type="submit" name="submit" value="Add Book" /> -->
+                    <button type='submit' name="submit" id="submit-button">Add Book</button>
                 </div>
             </form>
 
-            <button commandfor="my-dialog" command="close">Close</button>
+            <div>
+                <button commandfor="my-dialog" command="close">Close</button>
+            </div>
         </dialog>
 
         <div id="library-container"></div>

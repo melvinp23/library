@@ -19,18 +19,26 @@ function addBookToLibrary() {
 	console.log(myLibrary);
 
 	render();
+	form.reset();
 }
 
 const newBookBtn = document.querySelector('#new-book-btn');
 newBookBtn.addEventListener('click', function () {
-	let newBookForm = document.querySelector('#new-book-form');
+	let newBookForm = document.querySelector('#form');
 	newBookForm.style.display = 'block';
 });
 
-const newBookForm = document.querySelector('#new-book-form');
+const dialog = document.getElementById('my-dialog');
+const addBtn = document.getElementById('submit-button');
+const newBookForm = document.querySelector('#form');
+
 newBookForm.addEventListener('submit', function (event) {
 	event.preventDefault();
 	addBookToLibrary();
+});
+
+addBtn.addEventListener('click', () => {
+	dialog.close();
 });
 
 function render() {
