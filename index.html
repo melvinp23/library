@@ -10,34 +10,43 @@
     </head>
 
     <body>
-        <button id="new-book-btn">New Book</button>
-        <form action="" id="new-book-form" style="display: none;">
-            <div>
-                <label for="title">Title:</label>
-                <input type="text" name="title" id="title" required />
-            </div>
+        <button id="new-book-btn" command="show-modal" commandfor="my-dialog">New Book</button>
 
-            <div>
-                <label for="author">Author:</label>
-                <input type="text" name="author" id="author" required />
-            </div>
+        <dialog id="my-dialog">
+            <form action="" id="new-book-form" style="display: none;">
+                <div>
+                    <label for="title">Book Title:</label>
+                    <input type="text" name="title" id="title" required />
+                </div>
 
-            <div>
-                <label for="pages"># of pages:</label>
-                <input type="number" name="pages" id="pages" required />
-            </div>
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" name="author" id="author" required />
+                </div>
 
-            <div>
-                <label for="read">Read:</label>
-                <input type="checkbox" name="read" id="read" required />
-            </div>
+                <div>
+                    <label for="pages"># of pages:</label>
+                    <input type="number" name="pages" id="pages" required />
+                </div>
 
-            <div>
-                <input type="submit" name="submit" value="Add Book" />
-            </div>
-        </form>
+                <div>
+                    <label for="read">Status: </label>
+                    <select name="status" id="status" class="u-full-width">
+                        <option value="read">Read</option>
+                        <option value="not read">Not read</option>
+                    </select>
+                </div>
 
-        <div id="library"></div>
+                <div>
+                    <input type="submit" name="submit" value="Add Book" />
+                </div>
+            </form>
+
+            <button commandfor="my-dialog" command="close">Close</button>
+        </dialog>
+
+        <div id="library-container"></div>
+
     </body>
 
 </html>
