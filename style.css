@@ -1,27 +1,310 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 body {
-	font-family:
-		system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		'Segoe UI',
-		Roboto,
-		Oxygen,
-		Ubuntu,
-		Cantarell,
-		'Open Sans',
-		'Helvetica Neue',
-		sans-serif;
+	min-height: 100vh;
+	padding: 40px 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #2f2a24;
+	background: #f4f1ea;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+h1 {
+	margin-bottom: 25px;
+	text-align: center;
+	font-size: 2.5rem;
+	letter-spacing: 2px;
+	color: #3e3025;
+}
+
+/* =========================
+   NEW BOOK BUTTON
+========================= */
+
+#new-book-btn {
+	display: block;
+	margin: 0 auto 35px;
+	padding: 12px 22px;
+
+	border: none;
+	border-radius: 8px;
+
+	background: #6b4f3a;
+	color: white;
+
+	font-size: 1rem;
+	font-weight: bold;
+
+	cursor: pointer;
+	transition: 0.2s ease;
+
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+#new-book-btn:hover {
+	background: #523b2b;
+	transform: translateY(-2px);
+}
+
+/* =========================
+   LIBRARY GRID
+========================= */
+
+#library-container {
+	width: min(1100px, 100%);
+	margin: 0 auto;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 24px;
+}
+
+/* =========================
+   BOOK CARD
+========================= */
+
+.book {
+	padding: 24px;
+
+	background: #fffdf8;
+	border-left: 6px solid #6b4f3a;
+	border-radius: 14px;
+
+	box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.book:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+}
+
+/* =========================
+   BOOK INFORMATION
+========================= */
+
+.book p {
+	margin-bottom: 10px;
+	color: #665b52;
+	line-height: 1.5;
+}
+
+.book .title {
+	margin-bottom: 15px;
+
+	color: #3e3025;
+
+	font-size: 1.35rem;
+	font-weight: bold;
+}
+
+.book .author {
+	font-size: 1rem;
+}
+
+.book .pages {
+	font-size: 0.95rem;
+}
+
+/* =========================
+   READ STATUS
+========================= */
+
+.book .readBtn {
+	display: inline-block;
+
+	margin: 8px 0 18px;
+	padding: 6px 12px;
+
+	border-radius: 20px;
+
+	background: #dceedd;
+	color: #35613a;
+
+	font-size: 0.85rem;
+	font-weight: bold;
+}
+
+/* =========================
+   REMOVE BUTTON
+========================= */
+
+#removeBtn {
+	width: 100%;
+	padding: 10px;
+
+	border: none;
+	border-radius: 8px;
+
+	background: #e5ded5;
+	color: #4a4038;
+
+	font-size: 0.95rem;
+	font-weight: bold;
+
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+
+#removeBtn:hover {
+	background: #d7cec3;
+}
+
+/* =========================
+   DIALOG
+========================= */
+
+dialog {
+	width: min(450px, calc(100% - 30px));
+
+	margin: auto;
+	padding: 30px;
+
+	border: none;
+	border-radius: 16px;
+
+	background: #fffdf8;
+	color: #2f2a24;
+
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+	background: rgba(35, 28, 23, 0.55);
+	backdrop-filter: blur(3px);
+}
+
+/* =========================
+   FORM
+========================= */
+
+#form {
+	display: flex !important;
+	flex-direction: column;
+	gap: 18px;
+}
+
+#form > div {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+label {
+	color: #4c4037;
+	font-size: 0.95rem;
+	font-weight: bold;
 }
 
 input,
-select,
-#submit-button {
-	width: 100%;
-	box-sizing: border-box;
-	margin-bottom: 5px;
-	padding: 5px;
+select {
+	padding: 11px 12px;
+
+	border: 1px solid #cfc4b8;
+	border-radius: 8px;
+
+	background: white;
+	color: #2f2a24;
+
+	font-size: 1rem;
+
+	outline: none;
+	transition: 0.2s ease;
 }
 
-select {
-	margin-bottom: 10px;
+input:focus,
+select:focus {
+	border-color: #6b4f3a;
+	box-shadow: 0 0 0 3px rgba(107, 79, 58, 0.15);
+}
+
+/* =========================
+   ADD BOOK BUTTON
+========================= */
+
+#submit-button {
+	width: 100%;
+	margin-top: 5px;
+	padding: 11px;
+
+	border: none;
+	border-radius: 8px;
+
+	background: #6b4f3a;
+	color: white;
+
+	font-size: 1rem;
+	font-weight: bold;
+
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+
+#submit-button:hover {
+	background: #523b2b;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+dialog > div:last-child {
+	margin-top: 12px;
+}
+
+dialog > div:last-child button {
+	width: 100%;
+	padding: 11px;
+
+	border: none;
+	border-radius: 8px;
+
+	background: #e5ded5;
+	color: #40372f;
+
+	font-size: 1rem;
+	font-weight: bold;
+
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+
+dialog > div:last-child button:hover {
+	background: #d7cec3;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+	body {
+		padding: 25px 15px;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	#library-container {
+		grid-template-columns: 1fr;
+	}
+
+	dialog {
+		padding: 22px;
+	}
 }

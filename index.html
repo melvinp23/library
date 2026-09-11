@@ -6,21 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Library</title>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
+        <script src="script.js" type="module" defer></script>
     </head>
 
     <body>
+        <h1>MY LIBRARY 📚</h1>
         <button id="new-book-btn" command="show-modal" commandfor="my-dialog">New Book</button>
 
         <dialog id="my-dialog">
             <form action="" id="form" style="display: none;">
                 <div>
-                    <label for="title">Book Title:</label>
+                    <label for="title">Book Title: *</label>
                     <input type="text" name="title" id="title" required />
                 </div>
 
                 <div>
-                    <label for="author">Author:</label>
+                    <label for="author">Author: *</label>
                     <input type="text" name="author" id="author" required />
                 </div>
 
@@ -38,8 +39,8 @@
                 </div>
 
                 <div>
-                    <!-- <input type="submit" name="submit" value="Add Book" /> -->
-                    <button type='submit' name="submit" id="submit-button">Add Book</button>
+                    <input type="submit" name="submit" value="Add Book" name="submit" id="submit-button" />
+                    <!-- <button type='submit' name="submit" id="submit-button">Add Book</button> -->
                 </div>
             </form>
 
